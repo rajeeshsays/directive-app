@@ -24,7 +24,7 @@ export class CanActivateRouteGuardService implements CanActivate{
      {
         const {DOB}   = JSON.parse(atob(token.split('.')[1])); 
       console.log(DOB);
-     }
+     }          
      return this.authService.IsAuthorised();
    
   }

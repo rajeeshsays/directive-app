@@ -1,13 +1,16 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Injector} from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-
+import { LocalStorageService } from 'angular-2-local-storage';
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
    response : any;
-  constructor(private httpClient : HttpClient) {   }
+   constructor(private httpClient : HttpClient ) { 
+  
+
+    }
 
 
   login() {
@@ -26,7 +29,7 @@ export class LoginService {
     {
       this.response = res;
       console.log(this.response.token);
-      localStorage.setItem("token",this.response.token);
+      window.localStorage.setItem("token",this.response.token);
       return this.response;
     });
     }
