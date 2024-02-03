@@ -18,7 +18,7 @@ export class AuthService {
      this.route = "customers";
      this.role = "admin";
 
-   }
+   } 
 
    IsAuthorised() : boolean
    {
